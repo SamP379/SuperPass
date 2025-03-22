@@ -14,3 +14,14 @@ class PasswordStorage:
         self.passwords_path = passwords_file_path
         self.encryptor = EncryptionManager(PasswordStorage.KEY_FILE_PATH)
         self.password_data = self.load_data()
+    
+
+    def load_data(self) -> dict:
+        """Loads the data from passwords.json or returns an empty {} if the file doesn't exist."""
+        try:
+            with open(self.passwords_path, mode = "r") as file:
+                data = json.load(file)
+                decrypted_data = self.encryptor.handle_decryption(data)
+                return decrypted_data
+        except Exception:
+            return {}
