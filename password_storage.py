@@ -39,3 +39,15 @@ class PasswordStorage:
     def get_websites(self) -> list:
         """Gets a list of all the websites in the password data and returns it."""
         return list(self.password_data.keys())
+    
+
+    def add_password(self, new_entry : dict) -> bool:
+        """Adds a new password entry to the password data and updates the JSON file."""
+        self.password_data.update(new_entry)
+        encrypted_data = self.encryptor.handle_encryption(copy.deepcopy(self.password_data))
+        try:
+            with open(self.passwords_path, mode = "w") as file:
+                json.dump(encrypted_data, file, indent = 4)
+                return True
+        except Exception:
+            return False
