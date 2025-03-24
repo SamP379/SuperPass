@@ -34,3 +34,8 @@ class PasswordStorage:
             return self.password_data[website]
         else:
             return None
+    
+
+    def get_websites(self) -> list:
+        """Gets a list of all the websites in the password data and returns it."""
+        return list(self.password_data.keys())
