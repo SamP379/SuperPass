@@ -25,3 +25,12 @@ class PasswordStorage:
                 return decrypted_data
         except Exception:
             return {}
+    
+
+    def get_password(self, website : str) -> dict | None:
+        """Gets the password data of the given website and returns it."""
+        website = website.lower()
+        if website in self.password_data:
+            return self.password_data[website]
+        else:
+            return None
