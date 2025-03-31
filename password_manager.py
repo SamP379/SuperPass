@@ -40,3 +40,8 @@ class PasswordManager:
     def handle_search_website(self, website : str) -> dict | None:
         """Handles searching for a website in the password data."""
         return self.storage.get_password(website)
+    
+
+    def handle_add_website(self, new_entry : dict) -> bool:
+        """Handles adding a website to the password data."""
+        return self.storage.add_password(new_entry)
