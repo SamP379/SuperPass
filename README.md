@@ -1,12 +1,14 @@
 # SuperPass
 
-## A simple Password Manager application for desktops built with Python. 
+## A Password Manager application for desktops built with Python. 
 
-SuperPass is a simple password manager built with Python and tkinter that aims to make storing and retrieving passwords quick and easy. It has a simple GUI, unlike other password managers. 
+SuperPass is a simple password manager built with Python and tkinter that aims to make storing and retrieving passwords quick and easy. It has a simple GUI, and allows user to store account details
+along with their passwords. The user can set a master password and then log in and start saving
+password data.  
 
-The project was a good oportunity to practise OOP concepts, and to learn about hashing and symmetric key encryption, as well as building a GUI using Python's tkinter library.
+The project was a good oportunity to practise OOP concepts, and to learn about hashing and symmetric key encryption, as well learning how to build a GUI using Python's tkinter library.
 
-![alt text](image-1.png)
+
 
 Title
 
