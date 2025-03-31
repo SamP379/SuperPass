@@ -50,4 +50,3 @@ class PasswordManager:
     def handle_view_websites(self):
         """Handles getting all websites saved in the password data."""
         return self.storage.get_websites()
-    
