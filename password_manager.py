@@ -18,3 +18,12 @@ class PasswordManager:
         self.login = LoginManager(PasswordManager.MASTER_FILE_PATH)
         self.storage = PasswordStorage(PasswordManager.PASSWORDS_FILE_PATH)
         self.registration = RegistrationManager(PasswordManager.MASTER_FILE_PATH)
+    
+
+    def handle_registration(self, master_password : str) -> bool:
+        """Attempts to register a user and returns True if successful, otherwise False."""
+        if not self.registration.check_registration():
+            hashed = self.hasher.hash_password(master_password)
+            return self.registration.save_master_password(hashed)
+        else:
+            return False
