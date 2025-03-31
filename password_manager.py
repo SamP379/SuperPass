@@ -28,10 +28,15 @@ class PasswordManager:
         else:
             return False
     
-    
+
     def handle_login(self, password : str) -> bool:
          """Attempts to log in by checking registration and verifying the password."""
          if self.login.check_registration():
               return self.login.check_login_password(password)
          else:
               return False
+    
+
+    def handle_search_website(self, website : str) -> dict | None:
+        """Handles searching for a website in the password data."""
+        return self.storage.get_password(website)
