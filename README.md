@@ -6,7 +6,7 @@ SuperPass is a simple password manager built with Python and tkinter that aims t
 
 The project was a good oportunity to practise OOP concepts, and to learn about hashing and symmetric key encryption, as well as building a GUI using Python's tkinter library.
 
-![alt text](image.png)
+![alt text](image-1.png)
 
 Title
 
