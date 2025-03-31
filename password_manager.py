@@ -27,3 +27,11 @@ class PasswordManager:
             return self.registration.save_master_password(hashed)
         else:
             return False
+    
+    
+    def handle_login(self, password : str) -> bool:
+         """Attempts to log in by checking registration and verifying the password."""
+         if self.login.check_registration():
+              return self.login.check_login_password(password)
+         else:
+              return False
