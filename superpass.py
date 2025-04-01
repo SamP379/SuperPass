@@ -15,7 +15,7 @@ class SuperPass():
 
 
 
-    def __init__(self):
+    def __init__(self, logo_file_path : str):
 
         self.is_logged_in = False
         self.manager = PasswordManager()
@@ -26,7 +26,7 @@ class SuperPass():
         self.window.configure(padx = 50, bg = "#030621")
 
         # Create the logo image
-        logo_img = PhotoImage(file = "images/logo.png")
+        logo_img = PhotoImage(file = logo_file_path)
         self.canvas = Canvas(self.window, width = 485, height = 370, bg = "#030621", highlightthickness=0)
         self.canvas.create_image(242, 185, image = logo_img)
         self.canvas.grid(row = 0, column = 0)
