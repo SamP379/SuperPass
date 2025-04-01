@@ -10,14 +10,23 @@ The project was a good oportunity to practise OOP concepts, how to work with JSO
 library.
 
 ## Demo
-
+<br>
+<br>
 ![alt text](images/demo1.png)
-<br>
-<br>
 <br>
 <br>
 <br>
 <br>
 ![alt text](images/demo2.png)
 
-## Instructions 
+## Instructions
+
+#### Step 1
+To run SuperPass, clone the git repo and then run main.py, or alternatively download and run the main.exe file found in the dist folder.
+
+#### Step 2
+
+After running the program, you will need to set a master password in order to log in and start saving passwords.
+
+#### Step 3
+Once logged in, you will have the option to either view a saved password, add a new password, or view a list of saved websites with password data.
