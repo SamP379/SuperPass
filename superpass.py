@@ -131,3 +131,23 @@ def login_user(self):
             self.update_ui()
         else:
             messagebox.showinfo(title = "Oops", message = "Log in unsuccessful.")
+
+
+
+def search_website(self):
+        """Fetches the entered website and calls the manager to handle website searching."""
+        website = self.website_entry.get()
+        website_data = self.manager.handle_search_website(website)
+        if website_data is not None:
+            pyperclip.copy(website_data['password'])
+            messagebox.showinfo(
+                title = f"{website.title()}",
+                message = (
+                    f"Website: {website.title()}\n"
+                    f"Username: {website_data['username']}\n"
+                    f"Email: {website_data['email']}\n"
+                    f"Password: {website_data['password']}"
+                )
+            )
+        else:
+            messagebox.showinfo(title ="Oops", message = f"Unable to find data for {website}.")
