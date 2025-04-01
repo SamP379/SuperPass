@@ -10,8 +10,6 @@ The project was a good oportunity to practise OOP concepts, how to work with JSO
 library.
 
 ## Demo
-<br>
-<br>
 ![alt text](images/demo1.png)
 <br>
 <br>
