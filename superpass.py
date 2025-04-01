@@ -37,3 +37,27 @@ class SuperPass():
 
         self.update_ui()
         self.window.mainloop()
+
+
+
+def create_logged_out_page(self):
+        """Creates the UI components for the logged-out state, including login and register frames."""
+
+        # Create the logged out frame
+        self.logged_out_frame = Frame(self.window, bg = "#030621", highlightthickness = 0)
+
+        # Create the register frame
+        self.register_frame = Frame(self.logged_out_frame, bg = "#030621")
+        self.register_button = Button(self.register_frame, text = "Register", height = 2, command = self.register_user) 
+        self.register_button.grid(row = 0, column = 0)
+        self.register_entry = Entry(self.register_frame, width = 30, font = ('Arial', 15)) 
+        self.register_entry.grid(row = 0, column = 1, padx = 10)
+        self.register_frame.grid(row = 0, column = 0, pady = 15)
+
+        # Create the login frame
+        self.login_frame = Frame(self.logged_out_frame, bg = "#030621")
+        self.login_button = Button(self.login_frame, text = "Login", width = 6, height = 2, command = self.login_user) 
+        self.login_button.grid(row = 0, column = 0)
+        self.login_entry = Entry(self.login_frame, width = 30, font = ('Arial', 15)) 
+        self.login_entry.grid(row = 0, column = 1, padx = 10)
+        self.login_frame.grid(row = 1, column = 0)
