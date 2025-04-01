@@ -151,3 +151,27 @@ def search_website(self):
             )
         else:
             messagebox.showinfo(title ="Oops", message = f"Unable to find data for {website}.")
+
+
+
+def add_website(self):
+        """Fetches the new account data and calls the manager to handle adding a new website."""
+        website = self.website_entry.get().lower()
+        username = self.username_entry.get()
+        email = self.email_entry.get()
+        password = self.password_entry.get()
+        new_entry = {
+            website : {
+                "username" : username,
+                "email" : email,
+                "password" : password
+            }
+        }
+        pyperclip.copy(password)
+        if len(website) != 0:
+            if self.manager.handle_add_website(new_entry):
+                messagebox.showinfo(title = "Success", message = "Website was successfully added!")
+            else:
+                messagebox.showinfo(title = "Oops", message = "Unable to save website ):")
+        else:
+            messagebox.showinfo(title ="Oops", message = f"Please don't leave the website field empty!")
