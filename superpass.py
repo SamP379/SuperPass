@@ -107,3 +107,16 @@ def update_ui(self):
             self.website_entry.focus()
             self.options_frame.grid(row = 1, column = 0)
             self.account_details_frame.grid(row = 2, column = 0, pady=(30,20))
+
+
+
+def register_user(self):
+        """Fetches the entered password and calls the manager to handle registration"""
+        password = self.register_entry.get()
+        if len(password) == 0:
+            messagebox.showinfo(title = "Oops", message = "Enter the master password before registering.")
+        else:
+            if self.manager.handle_registration(password):
+                messagebox.showinfo(title = "Success", message = "Registration was successful!")
+            else:
+                messagebox.showinfo(title = "Oops", message = "You have already registered.")
