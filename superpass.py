@@ -61,3 +61,36 @@ def create_logged_out_page(self):
         self.login_entry = Entry(self.login_frame, width = 30, font = ('Arial', 15)) 
         self.login_entry.grid(row = 0, column = 1, padx = 10)
         self.login_frame.grid(row = 1, column = 0)
+
+
+
+def create_logged_in_page(self):
+        """Creates the UI components for the logged-in state, including options and account details frames."""
+
+        # Create the options frame
+        self.options_frame = Frame(self.window, bg = "#030621", highlightthickness = 0)
+        self.search_button = Button(self.options_frame, text = "Search", width = 10, height = 2, command = self.search_website)
+        self.search_button.grid(row = 0, column = 0, padx = 23)
+        self.add_button = Button(self.options_frame, text = "Add", width = 10, height = 2, command = self.add_website)
+        self.add_button.grid(row = 0, column = 1, padx = 23)
+        self.websites_button = Button(self.options_frame, text = "Websites", width = 10, height = 2, command = self.view_websites)
+        self.websites_button.grid(row = 0, column = 2, padx = 23)
+
+        # Create the account details frame
+        self.account_details_frame = Frame(self.window, bg = "#030621", highlightthickness = 0)
+        self.website_label = Label(self.account_details_frame, text = "Website", width = 8)
+        self.website_label.grid(row = 0, column = 0, padx = (0,20), pady = 5)
+        self.website_entry = Entry(self.account_details_frame, width = 30)
+        self.website_entry.grid(row = 0, column = 1)
+        self.username_label = Label(self.account_details_frame, text = "Username", width = 8)
+        self.username_label.grid(row = 1, column = 0, padx = (0,20), pady = 5)
+        self.username_entry = Entry(self.account_details_frame, width = 30)
+        self.username_entry.grid(row = 1, column = 1)
+        self.email_label = Label(self.account_details_frame, text = "Email", width = 8)
+        self.email_label.grid(row = 2, column = 0, padx = (0,20), pady = 5)
+        self.email_entry = Entry(self.account_details_frame, width = 30)
+        self.email_entry.grid(row = 2, column = 1)
+        self.password_label = Label(self.account_details_frame, text = "Password", width = 8)
+        self.password_label.grid(row = 3, column = 0, padx = (0,20), pady = 5)
+        self.password_entry = Entry(self.account_details_frame, width = 30)
+        self.password_entry.grid(row = 3, column = 1)
