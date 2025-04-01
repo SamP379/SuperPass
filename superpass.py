@@ -40,7 +40,7 @@ class SuperPass():
 
 
 
-def create_logged_out_page(self):
+    def create_logged_out_page(self):
         """Creates the UI components for the logged-out state, including login and register frames."""
 
         # Create the logged out frame
@@ -64,7 +64,7 @@ def create_logged_out_page(self):
 
 
 
-def create_logged_in_page(self):
+    def create_logged_in_page(self):
         """Creates the UI components for the logged-in state, including options and account details frames."""
 
         # Create the options frame
@@ -97,7 +97,7 @@ def create_logged_in_page(self):
 
 
 
-def update_ui(self):
+    def update_ui(self):
         """Updates the UI based on the login state, showing either the logged-out or logged-in view."""
         if not self.is_logged_in:
             self.login_entry.focus()
@@ -110,7 +110,7 @@ def update_ui(self):
 
 
 
-def register_user(self):
+    def register_user(self):
         """Fetches the entered password and calls the manager to handle registration"""
         password = self.register_entry.get()
         if len(password) == 0:
@@ -123,7 +123,7 @@ def register_user(self):
 
 
 
-def login_user(self):
+    def login_user(self):
         """Fetches the entered password and calls the manager to handle login."""
         login_password = self.login_entry.get()
         if self.manager.handle_login(login_password):
@@ -134,7 +134,7 @@ def login_user(self):
 
 
 
-def search_website(self):
+    def search_website(self):
         """Fetches the entered website and calls the manager to handle website searching."""
         website = self.website_entry.get()
         website_data = self.manager.handle_search_website(website)
@@ -154,7 +154,7 @@ def search_website(self):
 
 
 
-def add_website(self):
+    def add_website(self):
         """Fetches the new account data and calls the manager to handle adding a new website."""
         website = self.website_entry.get().lower()
         username = self.username_entry.get()
@@ -175,3 +175,11 @@ def add_website(self):
                 messagebox.showinfo(title = "Oops", message = "Unable to save website ):")
         else:
             messagebox.showinfo(title ="Oops", message = f"Please don't leave the website field empty!")
+
+
+
+    def view_websites(self):
+        """Calls the manager to handle getting a list of all websites and then displays them in a messagebox."""
+        websites = self.manager.handle_view_websites()
+        websites_formatted = '\n'.join([website for website in websites])
+        messagebox.showinfo(title = "Websites", message = websites_formatted)
