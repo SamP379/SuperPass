@@ -120,3 +120,14 @@ def register_user(self):
                 messagebox.showinfo(title = "Success", message = "Registration was successful!")
             else:
                 messagebox.showinfo(title = "Oops", message = "You have already registered.")
+
+
+
+def login_user(self):
+        """Fetches the entered password and calls the manager to handle login."""
+        login_password = self.login_entry.get()
+        if self.manager.handle_login(login_password):
+            self.is_logged_in = True
+            self.update_ui()
+        else:
+            messagebox.showinfo(title = "Oops", message = "Log in unsuccessful.")
