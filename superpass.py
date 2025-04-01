@@ -94,3 +94,16 @@ def create_logged_in_page(self):
         self.password_label.grid(row = 3, column = 0, padx = (0,20), pady = 5)
         self.password_entry = Entry(self.account_details_frame, width = 30)
         self.password_entry.grid(row = 3, column = 1)
+
+
+
+def update_ui(self):
+        """Updates the UI based on the login state, showing either the logged-out or logged-in view."""
+        if not self.is_logged_in:
+            self.login_entry.focus()
+            self.logged_out_frame.grid(row = 1, column = 0, pady=(0,20))
+        else:
+            self.logged_out_frame.grid_forget()
+            self.website_entry.focus()
+            self.options_frame.grid(row = 1, column = 0)
+            self.account_details_frame.grid(row = 2, column = 0, pady=(30,20))
